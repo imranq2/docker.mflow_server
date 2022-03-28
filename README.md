@@ -1,2 +1,2 @@
-# docker.spark_python
-Docker image that has Apache Spark and Python
+# docker.mlflow_server
+Docker image that has MLFlow

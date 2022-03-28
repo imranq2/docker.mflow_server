@@ -12,4 +12,4 @@ EXPOSE 5000
 #    --backend-store-uri mysql+pymysql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${DATABASE}
 
 # basic command for running locally.  Replace with commands like above to point to other locations
-CMD ["mlflow", "server", "--host 0.0.0.0"]
+CMD ["mlflow", "server", "--host", "0.0.0.0"]

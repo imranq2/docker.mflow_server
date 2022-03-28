@@ -22,19 +22,10 @@ jobs:
       - name: Get Previous tag
         id: previoustag
         uses: WyriHaximus/github-action-get-previous-tag@master
-#      - name: enable experimental mode
-#        run: |
-#          echo '{"experimental": true}' | sudo tee -a /etc/docker/daemon.json
-      # install pipenv
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2.0.1
         with:
-          python-version: 3.8
-      - name: pip install docker-squash
-        run: |
-          pip install docker-squash
-      - name: Build, tag, and push image to Dockerhub
-        run: |
-          docker build -t imranq2/mlflow_server:${{ steps.previoustag.outputs.tag }} -t imranq2/mlflow_server:latest .
-          docker push imranq2/mlflow_server:${{ steps.previoustag.outputs.tag }}
-          docker push imranq2/mlflow_server:latest
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: imranq2/mlflow_server:latest, imranq2/mlflow_server:${{ steps.previoustag.outputs.tag }}

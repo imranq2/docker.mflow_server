@@ -1,6 +1,6 @@
 FROM python:3.8-slim-bullseye
 
-RUN pip install mlflow==1.24.0 pymysql==1.0.2 boto3==1.21.27 && \
+RUN pip install mlflow==1.26.0 pymysql==1.0.2 boto3==1.23.27 && \
     mkdir /mlflow/
 
 EXPOSE 5000

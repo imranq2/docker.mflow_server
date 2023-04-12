@@ -1,6 +1,9 @@
 FROM python:3.8-slim-bullseye
 
-RUN pip install mlflow==2.2.2 pymysql==1.0.2 boto3==1.26.94 && \
+RUN apt-get update
+RUN apt-get -y install gcc
+
+RUN pip install mlflow==2.2.2 pymysql==1.0.3 boto3==1.26.111 && \
     mkdir /mlflow/
 
 EXPOSE 5000

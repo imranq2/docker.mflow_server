@@ -3,9 +3,9 @@ FROM python:3.8-slim-bullseye
 RUN apt-get update
 #RUN apt-get -y install gcc build-essential python-dev
 
-RUN pip install --only-binary=:all: mlflow-skinny==2.2.2
-RUN pip install --no-deps --only-binary=:all: mlflow==2.2.2
-RUN pip install --only-binary=:all: pymysql==1.0.3 boto3==1.26.111 sqlalchemy alembic sqlparse flask pandas gunicorn querystring_parser
+RUN pip install --only-binary=:all: mlflow-skinny==2.5.0
+RUN pip install --no-deps --only-binary=:all: mlflow==2.5.0
+RUN pip install --only-binary=:all: pymysql==1.1.0 boto3==1.28.22 sqlalchemy alembic sqlparse flask pandas gunicorn querystring_parser
 
 RUN mkdir /mlflow/
 

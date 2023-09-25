@@ -5,7 +5,7 @@ RUN apt-get update
 
 RUN pip install --only-binary=:all: mlflow-skinny==2.6.0
 RUN pip install --no-deps --only-binary=:all: mlflow==2.6.0
-RUN pip install --only-binary=:all: pymysql==1.1.0 boto3==1.28.44 sqlalchemy alembic sqlparse flask pandas gunicorn querystring_parser
+RUN pip install --only-binary=:all: pymysql[rsa]==1.1.0 boto3==1.28.44 sqlalchemy alembic sqlparse flask pandas gunicorn querystring_parser
 
 RUN mkdir /mlflow/
 
